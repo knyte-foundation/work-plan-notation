@@ -1,0 +1,57 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+file_extensions:
+  - wpn
+scope: source
+contexts:
+  main:
+    # Queues begin with a '- ' and finish at the end of the line
+    - match: '- '
+      scope: constant
+      push: line_queue
+
+    # Progresses begin with a '. ' and finish at the end of the line
+    - match: '\. '
+      scope: variable.parameter
+      push: line_progress
+
+    # Successes begin with a '+ ' and finish at the end of the line
+    - match: '\+ '
+      scope: entity.name
+      push: line_success
+
+    # Fails begin with a 'x ' and finish at the end of the line
+    - match: 'x '
+      scope: storage
+      push: line_fail
+
+    # Comments begin with a '* ' and finish at the end of the line
+    - match: '\* '
+      scope: comment
+      push: line_comment
+
+  line_queue:
+    - meta_scope: constant
+    - match: $
+      pop: true
+
+  line_progress:
+    - meta_scope: variable.parameter
+    - match: $
+      pop: true
+
+  line_success:
+    - meta_scope: entity.name
+    - match: $
+      pop: true
+
+  line_fail:
+    - meta_scope: storage
+    - match: $
+      pop: true
+
+  line_comment:
+    - meta_scope: comment
+    - match: $
+      pop: true
