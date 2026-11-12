@@ -1,0 +1,35 @@
+{
+  "name": "wpn-language-support",
+  "displayName": "WPN Language Support",
+  "description": "Syntax highlighting for WPN files.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "wpn",
+        "aliases": [
+          "WPN",
+          "wpn"
+        ],
+        "extensions": [
+          ".wpn"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wpn",
+        "scopeName": "source.wpn",
+        "path": "./syntaxes/wpn.tmLanguage.json"
+      }
+    ]
+  }
+}

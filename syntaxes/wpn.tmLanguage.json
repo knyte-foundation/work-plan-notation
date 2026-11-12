@@ -1,0 +1,53 @@
+{
+  "name": "WPN",
+  "scopeName": "source.wpn",
+  "patterns": [
+    {
+      "include": "#queue"
+    },
+    {
+      "include": "#progress"
+    },
+    {
+      "include": "#success"
+    },
+    {
+      "include": "#fail"
+    },
+    {
+      "include": "#comment"
+    }
+  ],
+  "repository": {
+    "queue": {
+      "name": "constant",
+      "contentName": "constant",
+      "begin": "- ",
+      "end": "$"
+    },
+    "progress": {
+      "name": "variable.parameter",
+      "contentName": "variable.parameter",
+      "begin": "\\. ",
+      "end": "$"
+    },
+    "success": {
+      "name": "entity.name",
+      "contentName": "entity.name",
+      "begin": "\\+ ",
+      "end": "$"
+    },
+    "fail": {
+      "name": "storage",
+      "contentName": "storage",
+      "begin": "x ",
+      "end": "$"
+    },
+    "comment": {
+      "name": "comment",
+      "contentName": "comment",
+      "begin": "\\* ",
+      "end": "$"
+    }
+  }
+}
