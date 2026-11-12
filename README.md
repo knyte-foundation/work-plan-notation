@@ -6,7 +6,11 @@ Syntax highlight for wpn (Work Plan Notation) for Sublime Text.
 ### MacOS
 
 #### Sublime Text 3+
-Place file wpn.sublime-syntax to folder '~/Library/Application Support/Sublime Text 3/Packages/User'
+
+From the repository folder, run:
+```bash
+cp wpn.sublime-syntax ~/Library/Application Support/Sublime Text 3/Packages/User
+```
 
 #### VS Code
 
